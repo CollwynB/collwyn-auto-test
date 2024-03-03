@@ -14,8 +14,8 @@
     <input
       type="checkbox"
       name="showDisabled"
-      [value]="this.showDisabled"
-      (change)="toggleDisabled()"
+      [(ngModel)]="this.showDisabled"
+      (change)="emitSearch()"
     />
   </div>
 </form>

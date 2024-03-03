@@ -60,8 +60,6 @@ export class AppComponent {
           (user) => user.enabled
         );
     });
-    if (!showDisabled) {
-    }
     return;
   }
 }

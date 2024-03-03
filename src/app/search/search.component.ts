@@ -18,7 +18,6 @@ export class Search {
   showDisabled: boolean = true;
 
   toggleDisabled() {
-    this.showDisabled = !this.showDisabled;
     this.emitSearch();
   }
 
