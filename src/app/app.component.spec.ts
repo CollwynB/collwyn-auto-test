@@ -1,11 +1,18 @@
 import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { FirebaseAppModule } from '@angular/fire/app';
+import { FirestoreService } from './services/firestore.service';
+
+import { MockFirestoreService } from '../mocks/FirestoreService';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
+      imports: [AppComponent, FirebaseAppModule],
+      providers: [
+        { provide: FirestoreService, useClass: MockFirestoreService },
+      ],
+    });
   });
 
   it('should create the app', () => {
@@ -14,16 +21,12 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'collwyn-auto-test' title`, () => {
+  it('should set adding user to true when add user is clicked', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('collwyn-auto-test');
-  });
+    const element = fixture.debugElement.nativeElement;
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, collwyn-auto-test');
+    element.querySelector("[data-testid='add-user']").click();
+    expect(app.addingUser).toBe(true);
   });
 });

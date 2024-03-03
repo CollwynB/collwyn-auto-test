@@ -1,0 +1,21 @@
+<form (ngSubmit)="emitSearch()" class="search__form">
+  <div class="input-group">
+    <label class="input-label">Search term: </label>
+    <input
+      class="input--text"
+      placeholder="Search by name or role..."
+      [(ngModel)]="searchTerm"
+      name="searchTerm"
+    />
+  </div>
+  <button class="button button--primary">Search</button>
+  <div class="search__checkbox-container">
+    <label class="input-label">Show disabled: </label>
+    <input
+      type="checkbox"
+      name="showDisabled"
+      [value]="this.showDisabled"
+      (change)="toggleDisabled()"
+    />
+  </div>
+</form>

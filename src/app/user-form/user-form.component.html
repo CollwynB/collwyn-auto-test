@@ -1,0 +1,40 @@
+<div class="user-form__main">
+  <h1>{{ title }}</h1>
+  <button
+    class="user-form__close-button"
+    (click)="closeModal.emit(null)"
+    data-testid="close-form"
+  >
+    <img src="assets/close.svg" />
+  </button>
+  <form
+    class="user-form__form"
+    (ngSubmit)="submitUser.emit(newUser)"
+    data-testid="user-form"
+  >
+    <div class="user-form__input-group">
+      <label for="name">Name:</label>
+      <input
+        class="input--text"
+        [(ngModel)]="newUser.name"
+        name="name"
+        placeholder="Input name..."
+      />
+    </div>
+    <div class="user-form__input-group">
+      <label for="role">Role:</label>
+      <input
+        class="input--text"
+        [(ngModel)]="newUser.role"
+        name="role"
+        placeholder="Input role..."
+      />
+    </div>
+    <label>
+      Enabled:
+      <input type="checkbox" [(ngModel)]="newUser.enabled" name="enabled" />
+    </label>
+
+    <button class="button button--primary">Submit</button>
+  </form>
+</div>

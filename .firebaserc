@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "collwyn-auto-test": {
+      "hosting": {
+        "collwyn-auto-test": [
+          "collwyn-auto-test"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "collwyn-auto-test"
+  }
+}

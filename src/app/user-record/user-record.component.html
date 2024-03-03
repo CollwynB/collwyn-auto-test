@@ -1,0 +1,22 @@
+<div
+  [class]="[
+    'user-record__card',
+    user.enabled ? '' : 'user-record__card--disabled'
+  ]"
+>
+  <p>Name: {{ user.name }}</p>
+  <p>Role: {{ user.role }}</p>
+  <p>{{ user.enabled ? "Enabled" : "Disabled" }}</p>
+  <div class="user-record__icon-buttons">
+    <button (click)="openEditModal()">
+      <img src="/assets/edit.svg" />
+    </button>
+    <button (click)="deleteUser()" data-testid="delete-button">
+      <img src="/assets/trash-can.svg" />
+    </button>
+  </div>
+
+  <div class="user-record__loading-overlay" *ngIf="loading">
+    <span class="loader"></span>
+  </div>
+</div>

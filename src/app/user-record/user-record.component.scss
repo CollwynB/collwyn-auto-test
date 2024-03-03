@@ -1,0 +1,48 @@
+.user-record {
+  &__card {
+    background-color: white;
+    padding: 16px;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    & p:not(:last-child) {
+      margin-bottom: 16px;
+    }
+    &--disabled {
+      background-color: rgb(233, 233, 233);
+    }
+  }
+
+  &__loading-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.652);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__icon-buttons {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    & button {
+      padding: 4px;
+      background-color: transparent;
+      border: 0;
+      transition: 0.5s;
+      cursor: pointer;
+      & img {
+        height: 24px;
+        width: 24px;
+      }
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+  }
+}

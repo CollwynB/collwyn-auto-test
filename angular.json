@@ -94,6 +94,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "collwyn-auto-test:build:production",
+              "serveTarget": "collwyn-auto-test:serve:production"
+            },
+            "development": {
+              "buildTarget": "collwyn-auto-test:build:development",
+              "serveTarget": "collwyn-auto-test:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
