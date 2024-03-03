@@ -1,9 +1,4 @@
-import {
-  ComponentFixture,
-  TestBed,
-  tick,
-  fakeAsync,
-} from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { Search } from './search.component';
 
@@ -29,7 +24,9 @@ describe('SearchComponent', () => {
     component.searchTerm = 'test';
     fixture.detectChanges();
 
-    const form = fixture.nativeElement.querySelector('form');
+    const form = fixture.nativeElement.querySelector(
+      '[data-testid="search-form"]'
+    );
     form.dispatchEvent(new Event('submit'));
     fixture.detectChanges();
 
@@ -46,7 +43,7 @@ describe('SearchComponent', () => {
     fixture.detectChanges();
 
     const checkbox = fixture.nativeElement.querySelector(
-      'input[type="checkbox"]'
+      '[data-testid="disabled-toggle"]'
     );
     checkbox.dispatchEvent(new Event('change'));
     fixture.detectChanges();

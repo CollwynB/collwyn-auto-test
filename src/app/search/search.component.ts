@@ -17,10 +17,6 @@ export class Search {
   searchTerm: string = '';
   showDisabled: boolean = true;
 
-  toggleDisabled() {
-    this.emitSearch();
-  }
-
   emitSearch() {
     this.search.emit({
       searchTerm: this.searchTerm,

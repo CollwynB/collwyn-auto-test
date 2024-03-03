@@ -1,4 +1,4 @@
-<form (ngSubmit)="emitSearch()" class="search__form">
+<form (ngSubmit)="emitSearch()" class="search__form" data-testid="search-form">
   <div class="input-group">
     <label class="input-label">Search term: </label>
     <input
@@ -15,7 +15,9 @@
       type="checkbox"
       name="showDisabled"
       [(ngModel)]="this.showDisabled"
+      [ngModelOptions]="{ standalone: true }"
       (change)="emitSearch()"
+      data-testid="disabled-toggle"
     />
   </div>
 </form>
