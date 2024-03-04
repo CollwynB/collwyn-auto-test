@@ -2,6 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.2.
 
+## Potential to improve
+Here are a few ideas I have on how to improve:
+
+- make use of css variables to manage common styles, such as colour, font size, padding
+- improve test coverage
+- add confirmation dialogue for user deletion
+- allow selection of multiple users to bulk delete/disable
+- allow sorting by last created/last edited
+- pagination
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
